@@ -15,19 +15,20 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
 //static files
-app.use(express.static(path.join(__dirname,'public')));
+app.use(express.static(path.join(__dirname,'/public')));
 
 //setting views folder
-app.set('views',path.join(__dirname,'/src/views/'))
+app.set('views',path.join(__dirname,'/src/views/'));
 
-/*
+/* //setting views folder and subfolder
 app.set('views',[path.join(__dirname,'/src/views/'), 
 path.join(__dirname,'/src/views/admin/'), 
 path.join(__dirname,'/src/views/users/')]);
 */
 
 //Routes
-app.use('/',require('./src/routes/userRoutes'))
+app.use('/',require('./src/routes/userRoutes'));
+app.use('/admin',require('./src/routes/adminRoutes'));
 
 //starting server
 app.listen(port,()=>{

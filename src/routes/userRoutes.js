@@ -2,7 +2,9 @@ const express = require('express');
 const router = express.Router();
 const userController = require('../controllers/userController')
 
-router.get('/',userController.homepage);
+router.get('/',userController.loginPage);
+
+router.get('/user-register',userController.register);
 
 
 module.exports = router;
