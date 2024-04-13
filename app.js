@@ -1,19 +1,36 @@
+require('dotenv').config();
 const express = require('express');
-const app = express();
-const bodyParser = require('body-parser');
 const path = require('path');
-const dotenv = require('dotenv')
-const port = 8080;
+const expressLayouts = require('express-ejs-layouts')
 
-dotenv.config();
+const app = express();
+const port = 8080 || process.env.PORT;
+
+//setting view engine 
+app.use(expressLayouts);
 app.set('view engine','ejs')
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended:true}))
 
-app.get('/',(req,res)=>{
-    res.render("Login",{variable_name:"Hello World"})
-})
+//body parser
+app.use(express.urlencoded({extended:true}));
+app.use(express.json());
 
-app.listen(port,(req,res)=>{
+//static files
+app.use(express.static(path.join(__dirname,'public')));
+
+//setting views folder
+app.set('views',path.join(__dirname,'/src/views/'))
+
+/*
+app.set('views',[path.join(__dirname,'/src/views/'), 
+path.join(__dirname,'/src/views/admin/'), 
+path.join(__dirname,'/src/views/users/')]);
+*/
+
+//Routes
+app.use('/',require('./src/routes/userRoutes'))
+
+//starting server
+app.listen(port,()=>{
     console.log(`server started at port ${port}`)
-})
+    console.log(`http://localhost:${port}`);
+});
