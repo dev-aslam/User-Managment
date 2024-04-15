@@ -2,6 +2,7 @@ exports.loginpage = async (req,res)=>{
     res.render('admin/adminLogin',{title:'Login'})
 }
 
-exports.register = async (req,res)=>{
-    res.render('admin/adminRegister',{title:'Register'})
+exports.loginAdmin = async (req,res)=>{
+    console.log(req.body);
+    res.render('admin/adminLogin',{title:'Login'});
 }

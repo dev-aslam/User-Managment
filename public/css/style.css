@@ -1,0 +1,50 @@
+html,body{
+    height: 100%;
+    width: 100%;
+    background-color: #f0f5f9;
+}
+/*Login and create account page */
+.heading-icon{
+    width: 55px;
+    height: 55px;
+}
+
+/*Home page */
+
+.main{
+    max-width: 90vw;
+    margin: 0 auto;
+	padding: 40px;
+}
+
+nav.navbar.navbar-expand-lg.navbar-light{
+	padding:0 30px;
+}
+
+.nav-item{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.nav-item p{
+	margin-bottom: 0;
+	font-weight: 600;
+	font-size: 28px;
+	color: black;
+}
+
+.col-lg-4 .card{
+	height: 100%;
+}
+
+.col-lg-4 .card .card-body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.col-lg-8 .card{
+	height: 100%;
+}

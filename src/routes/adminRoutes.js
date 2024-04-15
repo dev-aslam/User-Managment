@@ -2,8 +2,7 @@ const express = require('express');
 const router = express.Router();
 const adminController = require('../controllers/adminController')
 
-router.get('/admin',adminController.loginpage);
-
-router.get('/admin-register',adminController.register);
+router.get('/',adminController.loginpage);
+router.post('/',adminController.loginAdmin)
 
 module.exports = router;
