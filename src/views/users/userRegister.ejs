@@ -13,27 +13,35 @@
                     </a>
 
 
-                    <form action="/add_user" method="POST">
-
+                    <form action="/add_user" method="POST" onsubmit="return validateRegisterForm()">
+                        <!-- Your form inputs -->
                         <div class="mb-3">
                             <label for="exampleInputtext1" class="form-label">Name</label>
-                            <input type="text" name="name" class="form-control" id="exampleInputtext1" wfd-id="id0">
+                            <input type="text" name="name" class="form-control" id="exampleInputtext1">
+                            <span id="nameError" class="text-danger"></span>
                         </div>
 
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Email</label>
-                            <input type="email" name="email" class="form-control" id="exampleInputEmail1">
+                            <input type="text" name="email" class="form-control" id="exampleInputEmail1">
+                            <span id="emailError" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputMobile" class="form-label">Mobile Number</label>
+                            <input type="text" name="mobileNo" class="form-control" id="exampleInputMobile">
+                            <span id="mobileError" class="text-danger"></span>
                         </div>
 
                         <div class="mb-5">
                             <label for="exampleInputPassword1" class="form-label">Password</label>
                             <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+                            <span id="passwordError" class="text-danger"></span>
                         </div>
 
                         <div class="d-flex justify-content-center w-100">
                             <button class="btn btn-primary w-50 fs-4 mb-4" type="submit" name="submit"
-                                value="sign in">Create
-                                Account</button>
+                                value="sign in">Create Account</button>
                         </div>
 
                         <div class="d-flex align-items-center justify-content-center">
@@ -44,8 +52,6 @@
 
 
                 </div>
-
-
             </div>
         </div>
     </div>

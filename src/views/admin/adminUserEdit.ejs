@@ -1,0 +1,39 @@
+<div class="main">
+    <div class="main-container">
+        <%- include('../partials/navbar_admin.ejs',{user_icon:"img/admin.png"}) %>
+            <form action="" method="POST" onsubmit="return validateRegisterForm()">
+                <!-- Your form inputs -->
+                <div class="mb-3">
+                    <label for="exampleInputtext1" class="form-label">Name</label>
+                    <input type="text" name="name" class="form-control" id="exampleInputtext1"
+                        value="<%= user.fullName %>">
+                    <span id="nameError" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email</label>
+                    <input type="text" name="email" class="form-control" id="exampleInputEmail1"
+                        value="<%= user.email %>">
+                    <span id="emailError" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleInputMobile" class="form-label">Mobile Number</label>
+                    <input type="text" name="mobileNo" class="form-control" id="exampleInputMobile"
+                        value="<%= user.mobileNo %>">
+                    <span id="mobileError" class="text-danger"></span>
+                </div>
+
+                <div class="mb-5">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+                    <span id="passwordError" class="text-danger"></span>
+                </div>
+
+                <div class="d-flex justify-content-center w-100">
+                    <button class="btn btn-primary w-50 fs-4 mb-4" type="submit" name="submit"
+                        value="update">Update</button>
+                </div>
+            </form>
+    </div>
+</div>

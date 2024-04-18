@@ -25,13 +25,28 @@ nav.navbar.navbar-expand-lg.navbar-light{
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	margin-right: 10px;
 }
 
 .nav-item p{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 0;
+	color: black;
+	font-weight: 600;
+}
+
+.nav-item p:hover{
+	color: rgb(76, 76, 212);
+}
+
+.nav-item h2{
 	margin-bottom: 0;
 	font-weight: 600;
 	font-size: 28px;
 	color: black;
+	margin-right:20px ;
 }
 
 .col-lg-4 .card{
@@ -47,4 +62,29 @@ nav.navbar.navbar-expand-lg.navbar-light{
 
 .col-lg-8 .card{
 	height: 100%;
+}
+
+.searchbar{
+	display: flex;
+	justify-content: right;
+	align-items: center;
+	margin: 10px 0;
+}
+
+.searchbar form{
+	display: flex;
+	justify-content: right;
+	align-items: center;
+	gap: 20px;
+	width: 100%;
+}
+
+.searchbar .form-control{
+	background-color: white;
+	max-width: 500px;
+	width: 100%;
+}
+
+td a{
+	margin: 0 5px;
 }

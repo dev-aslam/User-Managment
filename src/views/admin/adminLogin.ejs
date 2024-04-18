@@ -4,46 +4,44 @@
         class="position-relative overflow-hidden radial-gradient min-vh-100 d-flex align-items-center justify-content-center">
         <div class="d-flex align-items-center justify-content-center w-100">
             <div class="card auth-card mb-0 mx-3">
-
                 <div class="card-body">
-
                     <a href="/" class="text-nowrap logo-img text-center d-block py-3 w-100">
-                        <img src="img/admin.png" alt="admin icon" class="heading-icon">
+                        <img src="img/admin.png" alt="admin icon" class="heading-icon" />
                         <h2>Admin Login</h2>
                     </a>
 
-
-                    <form action="/admin" method="POST">
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Email</label>
-                            <input type="email" name="email" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp">
+                    <% if (errorMessage) { %>
+                        <div class="alert alert-danger" role="alert">
+                            <%= errorMessage %>
                         </div>
+                        <% } %>
+                            <% if (successMessage){ %>
+                                <div class="alert alert-success" role="alert">
+                                    <%= successMessage %>
+                                </div>
+                                <% } %>
 
-                        <div class="mb-4">
-                            <label for="exampleInputPassword1" class="form-label">Password</label>
-                            <input type="password" name="password" class="form-control" id="exampleInputPassword1">
-                        </div>
+                                    <form action="/admin" method="POST" onsubmit="return validateLoginForm()">
+                                        <div class="mb-3">
+                                            <label for="exampleInputEmail1" class="form-label">Email</label>
+                                            <input type="email" name="email" class="form-control"
+                                                id="exampleInputEmail1" aria-describedby="emailHelp" />
+                                            <span id="emailError" class="text-danger"></span>
+                                        </div>
 
-                        <div class="d-flex align-items-center justify-content-between mb-4">
-                            <div class="form-check">
-                                <input class="form-check-input primary" type="checkbox" name="remeberme" value=""
-                                    id="flexCheckChecked" checked>
-                                <label class="form-check-label text-dark" for="flexCheckChecked">
-                                    Remeber this Device
-                                </label>
-                            </div>
-                            <a class="text-primary fw-bold" href="">Forgot Password ?</a>
-                        </div>
+                                        <div class="mb-4">
+                                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                                            <input type="password" name="password" class="form-control"
+                                                id="exampleInputPassword1" />
+                                            <span id="passwordError" class="text-danger"></span>
+                                        </div>
 
-                        <button class="btn btn-primary w-100 fs-4 mb-4" type="submit" name="submit" value="Login">Sign
-                            In</button>
-                    </form>
-
-
+                                        <button class="btn btn-primary w-100 fs-4 mb-4" type="submit" name="submit"
+                                            value="Login">
+                                            Sign In
+                                        </button>
+                                    </form>
                 </div>
-
-
             </div>
         </div>
     </div>

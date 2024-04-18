@@ -1,0 +1,61 @@
+<div class="main">
+    <div class="main-container">
+        <%- include('../partials/navbar_admin.ejs',{user_icon:"img/admin.png"}) %>
+            <% if (errorMessage) { %>
+                <div class="alert alert-danger" role="alert">
+                    <%= errorMessage %>
+                </div>
+                <% } %>
+                    <% if (successMessage){ %>
+                        <div class="alert alert-success" role="alert">
+                            <%= successMessage %>
+                        </div>
+                        <% } %>
+                            <div class="searchbar">
+                                <form class="form-inline">
+                                    <input class="form-control mr-sm-2" type="search" id="searchInput"
+                                        placeholder="Search by Name, Email, or Mobile Number" aria-label="Search">
+                                    <button class="btn btn-outline-success my-2 my-sm-0" type="button"
+                                        onclick="searchUsers()">Search</button>
+                                </form>
+                            </div>
+                            <table class="table table-striped" id="userDetails">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">No.</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Mobile No</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% for(let i=0; i < users.length; i++) { %>
+                                        <tr>
+                                            <th scope="row">
+                                                <%= i+1 %>
+                                            </th>
+                                            <td>
+                                                <%= users[i].fullName %>
+                                            </td>
+                                            <td>
+                                                <%= users[i].email %>
+                                            </td>
+                                            <td>
+                                                <%= users[i].mobileNo %>
+                                            </td>
+                                            <td>
+                                                <a href="/admin/adminUserEdit?id=<%= users[i]._id %>"
+                                                    class="edit">Edit</a>
+                                                <a href="/admin/userDelete?id=<%= users[i]._id %>"
+                                                    class="delete">Delete</a>
+                                            </td>
+                                        </tr>
+                                        <% } %>
+                                </tbody>
+                            </table>
+    </div>
+</div>
+
+<script src="js/userSearch.js">
+</script>
